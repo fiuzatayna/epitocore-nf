@@ -11,7 +11,7 @@ process RUNTMHMM{
 
     script:
     """
-    gzip -dkvf $proteome;
+    #gzip -dkvf $proteome;
     faa=\$(printf $proteome | sed 's;.gz;;g');
     output_file="${proteome.baseName}_tmhmm.result";
     #docker run --rm -v \${PWD}:/home/ fiuzatayna/dev-epitocore perl /tmhmm-2.0c/bin/tmhmm -short \${faa} > \${output_file}
