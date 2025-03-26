@@ -9,7 +9,7 @@ include { GETNCBIPATHS } from './modules/getncbipaths'
 include { DOWNLOADPROTEOMES } from './modules/downloadproteomes'
 include { RUNTMHMM } from './modules/runtmhmm'
 include { DOWNLOADPSORTB } from './modules/downloadpsortb'
-include { REDUCEDPROTEOMES } from './modules/reducedproteomes'
+include { REDUCEPROTEOMES } from './modules/reduceproteomes'
 include { RUNPSORTB } from './modules/runpsortb'
 
 /*
