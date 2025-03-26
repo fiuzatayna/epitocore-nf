@@ -43,7 +43,7 @@ process DOWNLOADPROTEOMES{
 }
 
 process RUNTMHMM{
-    //container 'fiuzatayna/dev-epitocore'
+    container 'fiuzatayna/dev-epitocore'
 
     publishDir 'intermediary/tmhmm', mode: 'copy', overwrite: false
 
@@ -57,8 +57,9 @@ process RUNTMHMM{
     """
     gzip -dkvf $proteome;
     faa=\$(printf $proteome | sed 's;.gz;;g');
-    output_file="${proteome.baseName}_tmhmm.result"
-    docker run --rm -v \${PWD}:/home/ fiuzatayna/dev-epitocore perl /tmhmm-2.0c/bin/tmhmm -short \${faa} > \${output_file}
+    output_file="${proteome.baseName}_tmhmm.result";
+    #docker run --rm -v \${PWD}:/home/ fiuzatayna/dev-epitocore perl /tmhmm-2.0c/bin/tmhmm -short \${faa} > \${output_file}
+    perl /tmhmm-2.0c/bin/tmhmm -short \${faa} > \${output_file};
     """
 }
 
